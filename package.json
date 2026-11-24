@@ -1,6 +1,6 @@
 {
   "name": "shiyun-engine",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "三元九运 × 个人命盘的可计算叠加模型（世运引擎）+ MCP 接口。Era-luck overlay engine for Chinese metaphysics charts, with an MCP server.",
   "type": "module",
   "main": "src/index.js",
@@ -29,7 +29,7 @@
     "era-luck",
     "shiyun"
   ],
-  "author": "明镜解ME (https://mingjing.me)",
+  "author": "明镜解ME (https://mingjing.me) <mingjing.oss@qq.com>",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=18"

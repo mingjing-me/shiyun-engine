@@ -150,6 +150,13 @@ yearMarkers(2027); // → { isSummaryYear:true, window:'2027-2031', level:10, no
 - **价值观内核见 [VALUES.md](./VALUES.md)**——本引擎的判定键（尤其卡存、意义轴）须配合
   《九运价值观内核》的断语纪律使用：算法让人看，价值观教人活。
 
+
+## 联系 / Contact
+
+- 项目主页：[明镜解ME · mingjing.me](https://mingjing.me)（命理产品主站，本引擎的完整判定版在此运行）
+- 邮箱：**mingjing.oss@qq.com**（合作、勘误、集成咨询）
+- Issue：[GitHub Issues](https://github.com/mingjing-me/shiyun-engine/issues)（bug 与规则校准讨论）
+
 ## License
 
 Apache-2.0 © 明镜解ME (mingjing.me)
