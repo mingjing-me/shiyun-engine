@@ -1,0 +1,34 @@
+{
+  "name": "shiyun-engine",
+  "version": "0.4.0",
+  "description": "三元九运 × 个人命盘的可计算叠加模型（世运引擎）。Era-luck overlay engine for Chinese metaphysics charts.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "VALUES.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "bazi",
+    "八字",
+    "三元九运",
+    "九运",
+    "chinese-metaphysics",
+    "four-pillars",
+    "era-luck",
+    "shiyun"
+  ],
+  "author": "明镜解ME (https://mingjing.me)",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
