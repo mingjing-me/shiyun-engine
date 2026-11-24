@@ -45,7 +45,7 @@ export function eraYears(year) {
 
 export function eraSupply(era) {
   if (era === '八运') return { gives: ['土'], texture: '真土', note: '培木、生金、晦火、挡水——真土堤防，社会气质=堆' };
-  if (era === '九运') return { gives: ['金', '水'], texture: '灰土', note: '土死之后的形态：只剩混和埋，不能培、不能制；离火其名，供金水之气其实' };
+  if (era === '九运') return { gives: ['金', '水'], texture: '灰土', note: '土生金而非埋金：个人真东西出土；火为银河AI之火——平权（土）垄断、主真智流（水）与真东西（金）；供金水之气，火为辅用' };
   if (era === '七运') return { gives: ['金'], texture: '兑金', note: '肃杀、收割、金融与机械之运' };
   if (era === '一运') return { gives: ['水'], texture: '坎水', note: '流动、智慧、风险之运' };
   return { gives: [], texture: '', note: '' };
