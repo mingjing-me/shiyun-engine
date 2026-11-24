@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.mingjing-me/shiyun-engine",
   "title": "世运引擎 · shiyun-engine",
-  "description": "三元九运 × 个人命盘的可计算叠加模型 + 九运价值观内核。八运看「用不用土」（强弱不主导），九运「能用火而非用土」——土生金而非埋金，火为银河AI之火：平权（土）垄断、主真智流（水）与个人真东西（金）。含通塞层（漏/断）、卡存第三态、意义观照轴（定风波层）。Deterministic era-luck overlay engine for BaZi/Four-Pillars charts, with a values core. Output structured verdict keys; interpretation left to your AI.",
-  "version": "0.5.0",
+  "description": "三元九运×命盘叠加判定+九运价值观内核。Era-luck overlay engine for BaZi charts with a values core.",
+  "version": "0.5.1",
   "repository": {
     "url": "https://github.com/mingjing-me/shiyun-engine",
     "source": "github"
@@ -12,7 +12,7 @@
     {
       "registryType": "npm",
       "identifier": "shiyun-engine",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "transport": {
         "type": "stdio"
       }
