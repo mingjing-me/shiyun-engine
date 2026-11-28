@@ -3,6 +3,8 @@
 > 三元九运 × 个人命盘的可计算叠加模型 × 生命温度与时代标尺。
 > Deterministic era-luck (三元九运) overlay engine with a meaning & values core.
 
+[![M8ven 信任指数](https://m8ven.ai/mcp/mingjing-me/shiyun-engine/badge.svg)](https://m8ven.ai/mcp/mingjing-me/shiyun-engine)
+
 ## 核心要义（为什么要这样做）
 
 传统命理的工具箱里只有算法——排盘、生克、断语。算法可以精确到分，

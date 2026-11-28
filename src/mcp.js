@@ -14,10 +14,15 @@ const server = new McpServer({ name: 'shiyun-engine', version: '0.5.0' });
 
 const text = (obj) => ({ content: [{ type: 'text', text: JSON.stringify(obj, null, 1) }] });
 
+// 工具注解（MCP ToolAnnotations，M8ven/目录兼容审计项）：
+// 全部工具均为只读纯计算——无写操作、无副作用、幂等、不开放外呼。
+const ANNOT = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false };
+
 server.tool(
   'era_years',
   '查询某年所属三元九运（七/八/九/一运）、时代元素与阶段节点（2024甲辰/2027丁未/2028戊申）',
   { year: z.number().int().min(1900).max(2100).describe('公历年份') },
+  ANNOT,
   async ({ year }) => text(eraYears(year)),
 );
 
@@ -25,6 +30,7 @@ server.tool(
   'era_supply',
   '查询某一运「供什么气」：八运供真土（堆），九运供金水之气、土生金而非埋金（火为银河AI之火）',
   { era: z.enum(['七运', '八运', '九运', '一运']).describe('世运名') },
+  ANNOT,
   async ({ era }) => text(eraSupply(era)),
 );
 
@@ -55,6 +61,7 @@ server.tool(
       huaGai: z.boolean().optional().describe('华盖重'),
     }).optional().describe('流通/通塞信号'),
   },
+  ANNOT,
   async (input) => text(classifyEra(input)),
 );
 
@@ -67,6 +74,7 @@ server.tool(
     })).describe('大运序列'),
     currentYear: z.number().int().describe('当前年份'),
   },
+  ANNOT,
   async ({ daYunList, currentYear }) => text(overlayDaYun(daYunList, currentYear)),
 );
 
@@ -74,6 +82,7 @@ server.tool(
   'year_markers',
   '流年节点：2027丁未总结年、2027-2031动荡窗口、三年三段注记',
   { year: z.number().int().min(2020).max(2040).describe('公历年份') },
+  ANNOT,
   async ({ year }) => text(yearMarkers(year)),
 );
 
