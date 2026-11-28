@@ -277,6 +277,32 @@ export function overlayDaYun(daYunList, currentYear) {
   });
 }
 
+// ───────────────────────────── 5) 流年注记（东森 2026-11-29 灰土三部曲定稿） ─────────────────────────────
+
+// 灰土三部曲：土变灰（2024-2027 烧尽）→ 新土生金（2028）→ 大水漫世（2029-2031）→ 新世代（2032-2037）
+// 纪律：只录东森亲研口径；未考年份留空不编。
+export const YEAR_NOTES = [
+  { year: 2024, gz: '甲辰', title: '九运开门年',
+    note: '牌桌悄悄在换，暗地无声。火开始不再生土（人心在变）。' },
+  { year: 2025, gz: '乙巳', title: '木火通明',
+    note: 'AI 的发源与崛起之元年。' },
+  { year: 2026, gz: '丙午', title: '大火炼金',
+    note: 'AI 全面爆发。让人回归真实、炼掉一切多余部件的年份；也是看每个人「有多少东西可炼」、值不值得炼的年份。' },
+  { year: 2027, gz: '丁未', title: '灰土蒙世',
+    note: '土正式变灰，时代正式交界的大裂缝。绝多数八运行运之人皆应；盘中带丑未戌库者更为明显，盘中亥子丑者转折亦更为明显。八运火尽灰沉之年。' },
+  { year: 2028, gz: '戊申', title: '新土生金',
+    note: '新土到来，属生金之土，与八运旧土已然不同；世运旧火大减，正式步入九运能量的正式元年。八运旧途之众若于 2025-2027 三年未转旧改新、蜕皮重造，此年为塌房开始之大年。大水之象开始蔓延。' },
+  { year: 2029, gz: '己酉', title: '规则冲尽', range: [2029, 2031],
+    note: '旧的八运规则几乎被冲尽——世运彻底转变，观念、模式、舞台大更新。' },
+  { year: 2032, gz: '壬子', title: '新世代高束发展', range: [2032, 2037],
+    note: '新世代人类展开高束发展的年份。大水已到，世界大变样。' },
+];
+export function yearNoteOf(year) {
+  const direct = YEAR_NOTES.find(n => n.year === year);
+  if (direct) return direct;
+  const ranged = YEAR_NOTES.find(n => n.range && year >= n.range[0] && year <= n.range[1]);
+  return ranged || null;
+}
 // ───────────────────────────── 5) 流年节点 ─────────────────────────────
 
 export function yearMarkers(year) {
@@ -287,6 +313,8 @@ export function yearMarkers(year) {
   if (isSummaryYear) notes.push('总结年/考试年/大型过渡年：过去三年铺下去的事，到这年收卷');
   if (inWindow && !isSummaryYear) notes.push('动荡窗口内：不断任何人「平稳无事」，只看动荡的大小与落点');
   if (phase) notes.push(phase.note);
+  const yn = yearNoteOf(year); // 灰土三部曲流年注记（东森 2026-11-29 定稿）
+  if (yn) notes.unshift(`${yn.gz}·${yn.title}：${yn.note}`);
   return { year, isSummaryYear, window: inWindow ? '2027-2031' : null,
-    level: isSummaryYear ? 10 : inWindow ? 7 : 0, notes };
+    level: isSummaryYear ? 10 : inWindow ? 7 : 0, notes, yearNote: yn };
 }

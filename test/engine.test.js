@@ -4,7 +4,7 @@
 //  ④ 寒局水旺需湿土堤防 ⑤ 金水为喜用=九运主场 ⑥ 木不入判定
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { eraYears, eraSupply, classifyEra, overlayDaYun, yearMarkers } from '../src/index.js';
+import { eraYears, eraSupply, classifyEra, overlayDaYun, yearMarkers, yearNoteOf } from '../src/index.js';
 
 test('世运周期与三年三段', () => {
   assert.equal(eraYears(2016).era, '八运');
@@ -153,4 +153,17 @@ test('大运落段与流年节点', () => {
   assert.equal(a.sweetSpot, true);
   assert.equal(yearMarkers(2027).isSummaryYear, true);
   assert.equal(yearMarkers(2029).window, '2027-2031');
+});
+
+test('⑩ 流年注记（灰土三部曲，东森 2026-11-29 定稿）', () => {
+  assert.equal(yearNoteOf(2024).title, '九运开门年');
+  assert.ok(yearNoteOf(2025).note.includes('AI 的发源与崛起'));
+  assert.ok(yearNoteOf(2026).note.includes('炼'));
+  assert.ok(yearNoteOf(2027).note.includes('丑未戌'));
+  assert.ok(yearNoteOf(2028).note.includes('塌房'));
+  assert.equal(yearNoteOf(2030).title, '规则冲尽');      // 区间命中 2029-2031
+  assert.equal(yearNoteOf(2035).title, '新世代高束发展'); // 区间命中 2032-2037
+  assert.equal(yearNoteOf(2038), null);                   // 未考年份留空不编
+  const m = yearMarkers(2028);
+  assert.ok(m.yearNote && m.notes[0].includes('戊申·新土生金'));
 });
