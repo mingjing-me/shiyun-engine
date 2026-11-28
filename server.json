@@ -3,7 +3,7 @@
   "name": "io.github.mingjing-me/shiyun-engine",
   "title": "世运引擎 · shiyun-engine",
   "description": "三元九运×命盘叠加判定+九运价值观内核。Era-luck overlay engine for BaZi charts with a values core.",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "repository": {
     "url": "https://github.com/mingjing-me/shiyun-engine",
     "source": "github"
@@ -12,7 +12,7 @@
     {
       "registryType": "npm",
       "identifier": "shiyun-engine",
-      "version": "0.7.0",
+      "version": "0.7.1",
       "transport": {
         "type": "stdio"
       }
